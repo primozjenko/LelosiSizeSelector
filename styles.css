@@ -1,0 +1,93 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 20px;
+}
+
+table {
+    font-size: medium;
+    line-height: 1;
+
+}
+
+.table td,
+.table th {
+    padding: .30rem;
+    border: 1px solid white;
+}
+
+.barvna {
+    background: linear-gradient(180deg, #79e1d1, #a8e6cf);
+}
+
+.crna {
+    background: linear-gradient(180deg, #333333, #666666);
+    color: white;
+}
+
+.sivBg {
+    background-color: rgb(242, 242, 242);
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.mirko {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(592px, 1fr));
+    gap: 10px;
+    align-items: start;
+
+}
+
+.levimirko {}
+
+.desnimirko {
+    align-items: center;
+    text-align: center;
+}
+
+.levimirko,
+.desnimirko {
+    border: 0;
+    padding: 0;
+}
+
+.boxnoter {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.boxnoter img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+#sizeForm {
+    margin-top: 10px;
+}
+
+#sizeResult {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

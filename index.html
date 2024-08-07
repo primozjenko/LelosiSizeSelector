@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lelosi Size Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="mirko">
+        <div class="levimirko">
+            <!-- Size Chart -->
+            <div class="row">
+                <div class="col">
+                    <h5 class="modal-title">Tabela velikosti</h5>
+                    <table class="table custom-table">
+                        <tbody>
+                            <tr>
+                                <td class="crna">LELOSI</td>
+                                <td class="barvna">XXS</td>
+                                <td class="barvna">XS</td>
+                                <td class="barvna">S</td>
+                                <td class="barvna">M</td>
+                                <td class="barvna">L</td>
+                                <td class="barvna">XL</td>
+                                <td class="barvna">2XL</td>
+                            </tr>
+                            <tr>
+                                <td class="crna">Denim velikost</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>30</td>
+                                <td>32</td>
+                                <td>34</td>
+                                <td>36</td>
+                            </tr>
+                            <tr>
+                                <td class="crna">1. Obseg pasu</td>
+                                <td class="sivBg">67-71</td>
+                                <td class="sivBg">70-75</td>
+                                <td class="sivBg">74-81</td>
+                                <td class="sivBg">79-87</td>
+                                <td class="sivBg">85-93</td>
+                                <td class="sivBg">91-99</td>
+                                <td class="sivBg">98-105</td>
+                            </tr>
+                            <tr>
+                                <td class="crna">2. Obseg bokov</td>
+                                <td>85-95</td>
+                                <td>90-100</td>
+                                <td>95-105</td>
+                                <td>100-110</td>
+                                <td>105-115</td>
+                                <td>110-120</td>
+                                <td>115-125</td>
+                            </tr>
+                            <tr>
+                                <td class="crna">3. Razkorak</td>
+                                <td class="sivBg">76</td>
+                                <td class="sivBg">76</td>
+                                <td class="sivBg">76</td>
+                                <td class="sivBg">76</td>
+                                <td class="sivBg">76</td>
+                                <td class="sivBg">76</td>
+                                <td class="sivBg">76</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Mere so podane v centimetrih in lahko odstopajo za +/- 2 cm.<br>Priporočamo ti, da izbereš
+                        številko na podlagi meritve obsega pasu.<br>Tjaša je visoka 168 cm in nosi velikost XXS.</p>
+                    <button type="button" class="btn btn-info" id="findSizeButton" data-toggle="modal"
+                        data-target="#sizeFinderModal">
+                        Poišči svojo velikost
+                    </button>
+                </div>
+            </div>
+            <!-- Size Finder Steps -->
+            <div class="row mt-4" id="sizeFinderSteps" style="display:none;">
+                <div class="col">
+                    <div id="sizeForm">
+                        <!-- Step 1: Input Height and Weight -->
+                        <div class="step active" id="step1">
+                            <h6>Vnesite svojo višino in težo</h6>
+                            <div class="form-group">
+                                <label for="height">Višina</label>
+                                <input type="number" class="form-control" id="height"
+                                    placeholder="Vnesite svojo višino v cm" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Teža</label>
+                                <input type="number" class="form-control" id="weight"
+                                    placeholder="Vnesite svojo težo v kg" required>
+                            </div>
+                            <button type="button" class="btn btn-primary next-step">Naprej</button>
+                        </div>
+
+                        <!-- Step 2: Select Body Shape -->
+                        <div class="step" id="step2">
+                            <h6>Izberite obliko telesa</h6>
+                            <div class="form-group">
+                                <label for="bodyShape">Oblika telesa</label>
+                                <select class="form-control" id="bodyShape" required>
+                                    <option value="raven">Ravna</option>
+                                    <option value="povprecen">Povprečna</option>
+                                    <option value="zaobljen">Zaobljena</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-secondary prev-step">Nazaj</button>
+                            <button type="button" class="btn btn-primary next-step">Naprej</button>
+                        </div>
+
+                        <!-- Step 3: Select Hip Shape -->
+                        <div class="step" id="step3">
+                            <h6>Izberite obliko bokov</h6>
+                            <div class="form-group">
+                                <label for="hipShape">Oblika bokov</label>
+                                <select class="form-control" id="hipShape" required>
+                                    <option value="ozki">Ozki</option>
+                                    <option value="povprecni">Povprečni</option>
+                                    <option value="siri">Široki</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-secondary prev-step">Nazaj</button>
+                            <button type="button" class="btn btn-primary next-step">Naprej</button>
+                        </div>
+
+                        <!-- Step 4: Input Age -->
+                        <div class="step" id="step4">
+                            <h6>Vnesite svojo starost</h6>
+                            <div class="form-group">
+                                <label for="age">Starost</label>
+                                <input type="number" class="form-control" id="age" placeholder="Vnesite svojo starost"
+                                    required>
+                            </div>
+                            <button type="button" class="btn btn-secondary prev-step">Nazaj</button>
+                            <button type="button" class="btn btn-primary next-step">Naprej</button>
+                        </div>
+
+                        <!-- Step 5: Select Fit Preference -->
+                        <div class="step" id="step5">
+                            <h6>Izberite svojo preferenco velikosti</h6>
+                            <div class="form-group">
+                                <label for="fitPreference">Preferenca velikosti</label>
+                                <input type="range" class="form-control-range" id="fitPreference" min="1" max="3"
+                                    step="1" required>
+                                <div class="d-flex justify-content-between">
+                                    <span>Ožje</span>
+                                    <span>Bolj ohlapno</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-secondary prev-step">Nazaj</button>
+                            <button type="button" class="btn btn-primary next-step">Naprej</button>
+                        </div>
+
+                        <!-- Step 6: Select Usual Clothing Size -->
+                        <div class="step" id="step6">
+                            <h6>Izberite svojo običajno velikost oblačil</h6>
+                            <div class="form-group">
+                                <label for="usualSize">Običajna velikost</label>
+                                <select class="form-control" id="usualSize" required>
+                                    <option value="XXS">XXS</option>
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="2XL">2XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-secondary prev-step">Nazaj</button>
+                            <button type="button" class="btn btn-primary next-step" id="step6Next">Naprej</button>
+                        </div>
+
+                        <!-- Step 7: Display Recommended Size -->
+                        <div class="step" id="step7">
+                            <h6>Priporočena velikost</h6>
+                            <div id="sizeResult"></div>
+                            <button type="button" class="btn btn-secondary prev-step">Nazaj</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Nadaljuj z nakupom</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="desnimirko">
+            <div class="boxnoter">
+                <img class="boxslika"
+                    src="https://cdn.shopify.com/s/files/1/0308/4271/6296/files/sizechart-jeanslong.png?v=1697524706">
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
